@@ -1,0 +1,27 @@
+{
+    "_id" : ObjectId("60ed9f05f266ee3e143c2325"),
+    "kupac" : "kj160694dd",
+    "vlasnik" : "agencija",
+    "cena" : 60000,
+    "tip" : "stan",
+    "grad" : "Novi Sad",
+    "opstina" : "Detelinara",
+    "ulica" : "Detelinarska",
+    "broj" : 17,
+    "stan" : 5,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ed9f18f266ee3e143c2326"),
+    "kupac" : "Korisnik",
+    "vlasnik" : "User",
+    "cena" : 70000,
+    "tip" : "stan",
+    "grad" : "Beograd",
+    "opstina" : "Borca",
+    "ulica" : "Borcanska",
+    "broj" : 2,
+    "stan" : 7,
+    "__v" : 0
+}

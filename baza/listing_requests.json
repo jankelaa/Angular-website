@@ -1,0 +1,50 @@
+{
+    "_id" : ObjectId("60ec73604ed6020dfcb9bdd6"),
+    "slike" : [ 
+        "download (1).jfif", 
+        "download.jfif", 
+        "images (1).jfif", 
+        "images.jfif"
+    ],
+    "tip" : "kuca",
+    "opis" : "Jednoiposoban stan u centru grada, visoko prizemlje",
+    "grad" : "Beograd",
+    "opstina" : "Stari grad",
+    "ulica" : "Knjeginje Ljubice",
+    "broj" : 1,
+    "stan" : null,
+    "sprat" : null,
+    "spratnost" : 5,
+    "kvadratura" : 50,
+    "br_soba" : 1.5,
+    "namestenost" : false,
+    "cena" : 90000,
+    "vlasnik" : "User",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ec77254ed6020dfcb9bdd7"),
+    "slike" : [ 
+        "download (1).jfif", 
+        "download.jfif", 
+        "images (1).jfif"
+    ],
+    "tip" : "kuca",
+    "opis" : "Stan u kuci u MML",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "ulica" : "Radnicka",
+    "broj" : 5,
+    "stan" : null,
+    "sprat" : null,
+    "spratnost" : 1,
+    "kvadratura" : 25,
+    "br_soba" : 1,
+    "namestenost" : false,
+    "cena" : 300000,
+    "vlasnik" : "User",
+    "promo" : false,
+    "__v" : 0
+}

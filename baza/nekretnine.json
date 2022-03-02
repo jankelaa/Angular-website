@@ -1,0 +1,338 @@
+{
+    "_id" : ObjectId("60e5d4e2220a785d006aaf35"),
+    "opis" : "prostran 3.0 stan u luksuznoj zgradi na Zvezdari",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "ulica" : "Batutova",
+    "broj" : 2,
+    "stan" : 5,
+    "tip" : "stan",
+    "sprat" : 0,
+    "spratnost" : 5,
+    "kvadratura" : 102,
+    "br_soba" : 3.0,
+    "namestenost" : true,
+    "cena" : 150000,
+    "vlasnik" : "pera",
+    "promo" : false,
+    "slike" : [ 
+        "stan1_dnevna.jfif", 
+        "stan1_kupatilo.jfif", 
+        "stan1_spavaca.jfif", 
+        "stan1_kuhinja.jfif"
+    ]
+}
+
+{
+    "_id" : ObjectId("60e5d547220a785d006aaf62"),
+    "opis" : "kuca 3 sobe, u pancevu na prodaju",
+    "grad" : "Pancevo",
+    "opstina" : "Pancevo",
+    "ulica" : "Pancevacka",
+    "broj" : 2,
+    "stan" : null,
+    "tip" : "kuca",
+    "sprat" : null,
+    "spratnost" : 2,
+    "kvadratura" : 72,
+    "br_soba" : 3.0,
+    "namestenost" : false,
+    "cena" : 65000,
+    "vlasnik" : "agencija",
+    "promo" : true,
+    "slike" : [ 
+        "kuca_spavaca.jfif", 
+        "kuca_kupatilo.jfif", 
+        "kuca_kuhinja.jfif"
+    ]
+}
+
+{
+    "_id" : ObjectId("60e5f380220a785d006ab867"),
+    "opis" : "kuca 3 sobe, u pancevu na prodaju",
+    "grad" : "Smederevo",
+    "opstina" : "Smederevo",
+    "ulica" : "Smederevska",
+    "broj" : 2,
+    "stan" : null,
+    "tip" : "kuca",
+    "sprat" : null,
+    "spratnost" : 2,
+    "kvadratura" : 72,
+    "br_soba" : 3.0,
+    "namestenost" : false,
+    "cena" : 55000,
+    "vlasnik" : "User",
+    "promo" : true,
+    "slike" : [ 
+        "kuca.jfif", 
+        "kuca_spavaca.jfif", 
+        "kuca_kupatilo.jfif", 
+        "kuca_kuhinja.jfif"
+    ]
+}
+
+{
+    "_id" : ObjectId("60e84c8d220a785d006b18e9"),
+    "opis" : "stan u Borci, pogled na park",
+    "grad" : "Beograd",
+    "opstina" : "Borca",
+    "ulica" : "Borcanska",
+    "broj" : 2,
+    "stan" : 7,
+    "tip" : "stan",
+    "sprat" : 4,
+    "spratnost" : 5,
+    "kvadratura" : 42,
+    "br_soba" : 1.0,
+    "namestenost" : true,
+    "cena" : 70000,
+    "vlasnik" : "User",
+    "promo" : false,
+    "slike" : [ 
+        "stan1_dnevna.jfif", 
+        "stan1_kupatilo.jfif", 
+        "stan1_spavaca.jfif", 
+        "stan1_kuhinja.jfif"
+    ]
+}
+
+{
+    "_id" : ObjectId("60ec9107870b282d046720a1"),
+    "slike" : [ 
+        "antalya_tram.jpg", 
+        "download (1).jfif", 
+        "download.jfif", 
+        "images (1).jfif", 
+        "images.jfif"
+    ],
+    "tip" : "stan",
+    "opis" : "Stan u Mirijevu",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "ulica" : "Matice srpske",
+    "broj" : 47,
+    "stan" : 7,
+    "sprat" : 1,
+    "spratnost" : 5,
+    "kvadratura" : 50,
+    "br_soba" : 1.5,
+    "namestenost" : true,
+    "cena" : 80000,
+    "vlasnik" : "agencija",
+    "promo" : true,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ec9aff4ee7a323146f0a10"),
+    "slike" : [ 
+        "antalya_tram.jpg", 
+        "images (1).jfif", 
+        "images.jfif"
+    ],
+    "tip" : "stan",
+    "opis" : "Stan u suterenu",
+    "grad" : "Beograd",
+    "opstina" : "Kotež",
+    "ulica" : "Augusta Šenoe",
+    "broj" : 1,
+    "stan" : 1,
+    "sprat" : 0,
+    "spratnost" : 4,
+    "kvadratura" : 15,
+    "br_soba" : 5,
+    "namestenost" : false,
+    "cena" : 15000,
+    "vlasnik" : "Korisnik",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eca3764ee7a323146f0a11"),
+    "slike" : [ 
+        "images.jfif", 
+        "kuca.jfif", 
+        "kuca_kuhinja.jfif", 
+        "kuca_kupatilo.jfif", 
+        "kuca_spavaca.jfif", 
+        "kuca2_kuhinja.jfif", 
+        "kuca2_kupatilo.jfif", 
+        "kuca2_spavaca.jfif", 
+        "stan1_dnevna.jfif", 
+        "stan1_kuhinja.jfif", 
+        "stan1_kupatilo.jfif", 
+        "stan1_spavaca.jfif", 
+        "stan2_dnevna.jfif", 
+        "stan2_kupatilo.jfif", 
+        "stan2_spavaca.jfif"
+    ],
+    "tip" : "kuca",
+    "opis" : "Kuca na Dedinju",
+    "grad" : "Beograd",
+    "opstina" : "Vozdovac",
+    "ulica" : "Dedinjska",
+    "broj" : 1,
+    "stan" : null,
+    "sprat" : null,
+    "spratnost" : 2,
+    "kvadratura" : 180,
+    "br_soba" : 10,
+    "namestenost" : false,
+    "cena" : 350000,
+    "vlasnik" : "agencija",
+    "promo" : true,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ecd882bb353d0d78b8c34e"),
+    "slike" : [ 
+        "kuca2_kuhinja.jfif", 
+        "kuca2_spavaca.jfif", 
+        "stan1_dnevna.jfif"
+    ],
+    "tip" : "stan",
+    "opis" : "Stan u Novom Sadu",
+    "grad" : "Novi Sad",
+    "opstina" : "Detelinara",
+    "ulica" : "Detelinarska",
+    "broj" : 17,
+    "stan" : 5,
+    "sprat" : 4,
+    "spratnost" : 4,
+    "kvadratura" : 45,
+    "br_soba" : 1.5,
+    "namestenost" : false,
+    "cena" : 60000,
+    "vlasnik" : "agencija",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eda093f266ee3e143c2328"),
+    "slike" : [ 
+        "kuca2_kuhinja.jfif", 
+        "kuca2_spavaca.jfif", 
+        "stan1_dnevna.jfif"
+    ],
+    "tip" : "kuca",
+    "opis" : "Kuca u Novom Sadu na Štrandu",
+    "grad" : "Novi Sad",
+    "opstina" : "Novosadska",
+    "ulica" : "Novosadska",
+    "broj" : 5,
+    "stan" : null,
+    "sprat" : null,
+    "spratnost" : 2,
+    "kvadratura" : 90,
+    "br_soba" : 5,
+    "namestenost" : false,
+    "cena" : 110000,
+    "vlasnik" : "agencija",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eda181f266ee3e143c232a"),
+    "slike" : [ 
+        "download.jfif", 
+        "images (1).jfif", 
+        "images.jfif"
+    ],
+    "tip" : "stan",
+    "opis" : "Garsonjera u potkrovlju u Novom Sadu",
+    "grad" : "Novi Sad",
+    "opstina" : "Novosadska",
+    "ulica" : "Novosadska",
+    "broj" : 5,
+    "stan" : 22,
+    "sprat" : 5,
+    "spratnost" : 5,
+    "kvadratura" : 28,
+    "br_soba" : 0.5,
+    "namestenost" : false,
+    "cena" : 50000,
+    "vlasnik" : "kj160694dd",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60edcce88a81460160667b01"),
+    "slike" : [ 
+        "kuca_kupatilo.jfif", 
+        "kuca_spavaca.jfif", 
+        "kuca2_kuhinja.jfif", 
+        "kuca2_spavaca.jfif"
+    ],
+    "tip" : "kuca",
+    "opis" : "Kuca u Subotici",
+    "grad" : "Subotica",
+    "opstina" : "Opstina",
+    "ulica" : "Ulica",
+    "broj" : 5,
+    "stan" : null,
+    "sprat" : null,
+    "spratnost" : 1,
+    "kvadratura" : 80,
+    "br_soba" : 4,
+    "namestenost" : false,
+    "cena" : 75000,
+    "vlasnik" : "Stanoje",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ee3446220a785d006c2e3a"),
+    "slike" : [ 
+        "download (1).jfif", 
+        "download.jfif", 
+        "images.jfif"
+    ],
+    "tip" : "stan",
+    "opis" : "Stan u Subotici",
+    "grad" : "Subotica",
+    "opstina" : "Opstina",
+    "ulica" : "Ulica",
+    "broj" : 5,
+    "stan" : 5,
+    "sprat" : 0,
+    "spratnost" : 4,
+    "kvadratura" : 50,
+    "br_soba" : 1.5,
+    "namestenost" : false,
+    "cena" : 50000,
+    "vlasnik" : "pera",
+    "promo" : false,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eed2c17302623458d905a5"),
+    "slike" : [ 
+        "images (1).jfif", 
+        "images.jfif", 
+        "yt1s.mp4"
+    ],
+    "tip" : "stan",
+    "opis" : "Stan",
+    "grad" : "Zagreb",
+    "opstina" : "Zagreb",
+    "ulica" : "Šešeljeva",
+    "broj" : 5,
+    "stan" : 9,
+    "sprat" : 2,
+    "spratnost" : 4,
+    "kvadratura" : 50,
+    "br_soba" : 1.5,
+    "namestenost" : true,
+    "cena" : 70000,
+    "vlasnik" : "pera",
+    "promo" : false,
+    "__v" : 0
+}

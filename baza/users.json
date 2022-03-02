@@ -1,0 +1,96 @@
+{
+    "_id" : ObjectId("60e3a735ff1dc94bb3758e89"),
+    "firstname" : "admin",
+    "lastname" : "admin",
+    "username" : "admin",
+    "password" : "Admin!23",
+    "email" : "admin@admin.com",
+    "city" : "admin",
+    "country" : "admin",
+    "type" : "admin",
+    "photo" : null
+}
+
+{
+    "_id" : ObjectId("60e84bef4799760994c5f6b1"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "Stanoje",
+    "password" : "Stanoje!23",
+    "email" : "stanoje@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "baldy.png",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60e8b08d7451af25f4fa8976"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "pera",
+    "password" : "Pera!234",
+    "email" : "pera@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "catholic.png",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60e8fc2a269ee33060e7bb51"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "Agent",
+    "password" : "Agent!23",
+    "email" : "agent@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "agent",
+    "photo" : "tijana.jfif",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60e8fc54269ee33060e7bb52"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "User",
+    "password" : "User!23",
+    "email" : "user@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "baldy.png",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60e909d957a1dc39b8574c78"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "Korisnik",
+    "password" : "Korisnik!23",
+    "email" : "Korisnik@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "wiener.jfif",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ee3e553ae8a437b00cced8"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "newage",
+    "password" : "Newage!23",
+    "email" : "jankec994@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "",
+    "__v" : 0
+}

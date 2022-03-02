@@ -1,0 +1,27 @@
+{
+    "_id" : ObjectId("60e8ec327451af25f4fa8977"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "mbape",
+    "password" : "Mbape!23",
+    "email" : "mbape@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "thatguy.png",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ecd8eabb353d0d78b8c34f"),
+    "firstname" : "Janko",
+    "lastname" : "Kitanovic",
+    "username" : "Lidija",
+    "password" : "Lidija!23",
+    "email" : "lidija@gmail.com",
+    "city" : "Beograd",
+    "country" : "Serbia",
+    "type" : "user",
+    "photo" : "catholic.png",
+    "__v" : 0
+}

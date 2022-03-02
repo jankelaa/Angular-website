@@ -1,0 +1,134 @@
+{
+    "_id" : ObjectId("60ed837ecc374520706f9d9d"),
+    "kupac" : "User",
+    "vlasnik" : "agencija",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "tip" : "stan",
+    "ulica" : "Matice srpske",
+    "broj" : 47,
+    "stan" : 7,
+    "cena" : 90000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ed964b7180e9314410297f"),
+    "kupac" : "User",
+    "vlasnik" : "pera",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "tip" : "stan",
+    "ulica" : "Batutova",
+    "broj" : 2,
+    "stan" : 5,
+    "cena" : 150000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ed9d99f266ee3e143c2320"),
+    "kupac" : "User",
+    "vlasnik" : "agencija",
+    "grad" : "Pancevo",
+    "opstina" : "Pancevo",
+    "tip" : "kuca",
+    "ulica" : "Pancevacka",
+    "broj" : 2,
+    "stan" : null,
+    "cena" : 65000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ed9de3f266ee3e143c2322"),
+    "kupac" : "kj160694dd",
+    "vlasnik" : "User",
+    "grad" : "Smederevo",
+    "opstina" : "Smederevo",
+    "tip" : "kuca",
+    "ulica" : "Smederevska",
+    "broj" : 2,
+    "stan" : null,
+    "cena" : 55000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60ed9e09f266ee3e143c2324"),
+    "kupac" : "kj160694dd",
+    "vlasnik" : "Korisnik",
+    "grad" : "Beograd",
+    "opstina" : "Kotež",
+    "tip" : "stan",
+    "ulica" : "Augusta Šenoe",
+    "broj" : 1,
+    "stan" : 1,
+    "cena" : 15000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60edcdc98a81460160667b03"),
+    "kupac" : "pera",
+    "vlasnik" : "Andrea",
+    "grad" : "Subotica",
+    "opstina" : "Opstina",
+    "tip" : "kuca",
+    "ulica" : "Ulica",
+    "broj" : 5,
+    "stan" : null,
+    "cena" : 75000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eddd6107f0843f50dd27b7"),
+    "kupac" : "pera",
+    "vlasnik" : "agencija",
+    "grad" : "Pancevo",
+    "opstina" : "Pancevo",
+    "tip" : "kuca",
+    "ulica" : "Pancevacka",
+    "broj" : 2,
+    "stan" : null,
+    "cena" : 65000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60eddd6a07f0843f50dd27b8"),
+    "kupac" : "pera",
+    "vlasnik" : "agencija",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "tip" : "stan",
+    "ulica" : "Matice srpske",
+    "broj" : 47,
+    "stan" : 7,
+    "cena" : 80000,
+    "potvrda" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("60edddf107f0843f50dd27b9"),
+    "kupac" : "pera",
+    "vlasnik" : "agencija",
+    "grad" : "Beograd",
+    "opstina" : "Vozdovac",
+    "tip" : "kuca",
+    "ulica" : "Dedinjska",
+    "broj" : 1,
+    "stan" : null,
+    "cena" : 350000,
+    "potvrda" : null,
+    "__v" : 0
+}
