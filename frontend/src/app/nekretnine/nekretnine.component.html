@@ -1,0 +1,158 @@
+<div class="home" *ngIf='user==null'>
+    <!--<div class="nekretninaGost" *ngFor='let promovisana of promovisane' style="background-color: limegreen;">-->
+    <div class="nekretninaGost" style="background-color: limegreen;">
+        <table class="nekretnina">
+            <tr>
+                <th rowspan="2" *ngIf='greaterThan(promoIndex, 0)'><button (click)="prevIndex()">&lt;</button></th>
+                <th rowspan="2">
+                    <!--<img class="promo"
+                        src="{{'../../assets/photos/'+promovisane[promoIndex].slike[rand(promovisane[promoIndex])]}}">-->
+                    <img class="promo" src="{{'../../assets/photos/'+promovisane[promoIndex].slike[0]}}">
+
+                </th>
+                <th>Lokacija</th>
+                <th>Cena</th>
+                <th>Tip</th>
+                <th>Broj soba</th>
+                <th>Kvadratura</th>
+                <th rowspan="2" *ngIf='lessThan(promoIndex, promovisane.length-1)'><button
+                        (click)="nextIndex()">&gt;</button></th>
+            </tr>
+            <tr>
+                <td>{{promovisane[promoIndex].grad}}, {{promovisane[promoIndex].opstina}}</td>
+                <td>{{promovisane[promoIndex].cena}} €</td>
+                <td>{{promovisane[promoIndex].tip}}</td>
+                <td *ngIf='promovisane[promoIndex].br_soba!=0.5'>{{promovisane[promoIndex].br_soba}}</td>
+                <td *ngIf='promovisane[promoIndex].br_soba==0.5'>garsonjera</td>
+                <td>{{promovisane[promoIndex].kvadratura}} m2</td>
+            </tr>
+        </table>
+    </div>
+    <div class="nekretninaGost" *ngFor='let nekretnina of nekretnine'>
+        <table class="nekretnina">
+            <tr>
+                <th rowspan="2">
+                    <!--<img class="nekretnine"
+                        src="{{'../../assets/photos/'+nekretnina.slike[rand(nekretnina)]}}">-->
+                    <img class="nekretnine" src="{{'../../assets/photos/'+nekretnina.slike[0]}}">
+                </th>
+                <th>Lokacija</th>
+                <th>Cena</th>
+                <th>Tip</th>
+                <th>Broj soba</th>
+                <th>Kvadratura</th>
+            </tr>
+            <tr>
+                <td>{{nekretnina.grad}}, {{nekretnina.opstina}}</td>
+                <td>{{nekretnina.cena}} €</td>
+                <td>{{nekretnina.tip}}</td>
+                <td *ngIf='nekretnina.br_soba!=0.5'>{{nekretnina.br_soba}}</td>
+                <td *ngIf='nekretnina.br_soba==0.5'>garsonjera</td>
+                <td>{{nekretnina.kvadratura}} m2</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="pretragaGost" *ngIf='user==null'>
+    <form>
+        Cena od: <input type='number' id="cena" name="cenaOd" [(ngModel)]='cenaOd' min="0"
+            (change)="cenaOdChange($event)" step="1000">
+        Cena do:<input type='number' id="cena" name="cenaDo" [(ngModel)]='cenaDo' min="0"
+            (change)="cenaDoChange($event)" step="1000">
+        <br />
+        Grad: <input type='text' name="grad" [(ngModel)]='grad' size='15'>
+        <br />
+        <input type='button' value="Pretrazi" (click)='gostPretraga()'>
+    </form>
+    <span *ngIf='message!=""' class="red">{{message}}</span>
+</div>
+
+<!--
+    /
+    /
+    /
+    /
+    /
+    /
+    /
+    /
+-->
+
+<div *ngIf='user!=null'>
+    <!--<div class="nekretninaGost" *ngFor='let promovisana of promovisane' style="background-color: limegreen;">-->
+    <div class="nekretninaUser" style="background-color: limegreen;">
+        <div class="wrapper">
+            <div class="first">
+                <button (click)="prevIndex()" *ngIf='greaterThan(promoIndex, 0)'>&lt;</button>
+                <span *ngIf='lessThan(promoIndex, 1)'>&nbsp;</span>
+            </div>
+            <div class="second">
+                <table class="nekretnina" (click)='callNekretnina(promovisane[promoIndex])'>
+                    <tr>
+                        <th rowspan="2">
+                            <!--<img class="promo"
+                        src="{{'../../assets/photos/'+promovisane[promoIndex].slike[rand(promovisane[promoIndex])]}}">-->
+                            <img class="promo" src="{{'../../assets/photos/'+promovisane[promoIndex].slike[0]}}">
+
+                        </th>
+                        <th>Lokacija</th>
+                        <th>Cena</th>
+                        <th>Tip</th>
+                        <th>Broj soba</th>
+                        <th>Kvadratura</th>
+                    </tr>
+                    <tr>
+                        <td>{{promovisane[promoIndex].grad}}, {{promovisane[promoIndex].opstina}}</td>
+                        <td>{{promovisane[promoIndex].cena}} €</td>
+                        <td>{{promovisane[promoIndex].tip}}</td>
+                        <td *ngIf='promovisane[promoIndex].br_soba!=0.5'>{{promovisane[promoIndex].br_soba}}</td>
+                        <td *ngIf='promovisane[promoIndex].br_soba==0.5'>garsonjera</td>
+                        <td>{{promovisane[promoIndex].kvadratura}} m2</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="third">
+                <button class="right" (click)="nextIndex()"
+                    *ngIf='lessThan(promoIndex, promovisane.length-1)'>&gt;</button>
+                <span *ngIf='greaterThan(promoIndex, promovisane.length-2)'>&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div class="user_pretraga">
+        <form>
+            Cena od: <input type='number' id="cena" name="cenaOd" [(ngModel)]='cenaOd' min="0"
+                (change)="cenaOdChange($event)" step="1000">
+            Cena do:<input type='number' id="cena" name="cenaDo" [(ngModel)]='cenaDo' min="0"
+                (change)="cenaDoChange($event)" step="1000">
+            Grad: <input type='text' name="grad" [(ngModel)]='grad' size='15'>
+            &nbsp;
+            <input type='button' value="Pretrazi" (click)='gostPretraga()'>
+        </form>
+        <span *ngIf='message!=""' class="red">{{message}}</span>
+    </div>
+
+    <div class="nekretninaUser" *ngFor='let nekretnina of nekretnine'>
+        <table class="nekretnina" (click)='callNekretnina(nekretnina)'>
+            <tr>
+                <th rowspan="2">
+                    <!--<img class="nekretnine"
+                        src="{{'../../assets/photos/'+nekretnina.slike[rand(nekretnina)]}}">-->
+                    <img class="nekretnine" src="{{'../../assets/photos/'+nekretnina.slike[0]}}">
+                </th>
+                <th>Lokacija</th>
+                <th>Cena</th>
+                <th>Tip</th>
+                <th>Broj soba</th>
+                <th>Kvadratura</th>
+            </tr>
+            <tr>
+                <td>{{nekretnina.grad}}, {{nekretnina.opstina}}</td>
+                <td>{{nekretnina.cena}} €</td>
+                <td>{{nekretnina.tip}}</td>
+                <td *ngIf='nekretnina.br_soba!=0.5'>{{nekretnina.br_soba}}</td>
+                <td *ngIf='nekretnina.br_soba==0.5'>garsonjera</td>
+                <td>{{nekretnina.kvadratura}} m2</td>
+            </tr>
+        </table>
+    </div>
+</div>

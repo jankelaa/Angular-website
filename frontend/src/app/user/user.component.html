@@ -1,0 +1,189 @@
+<div id="page-container">
+    <div id="content-wrap">
+        <app-header></app-header>
+        <span>
+
+            <!--MENI-->
+            <div class="menu">
+                <menu>
+                    <li *ngIf='user.type=="user"'><a (click)="prikaziNekretnine()">Nekretnine</a></li>
+                    <ul
+                        *ngIf='whatToDisplay=="sveNekretnine" || whatToDisplay=="mojeNekretnine" || whatToDisplay=="dodajNekretninu" '>
+                        <li><a (click)="prikaziNekretnine()">
+                                <span *ngIf='whatToDisplay=="sveNekretnine"'>▼</span>Pregled nekretnina</a></li>
+                        <li><a (click)="mojeNekretnine()">
+                                <span *ngIf='whatToDisplay=="mojeNekretnine"'>▼</span>Moje nekretnine</a></li>
+                        <li><a (click)="dodajNekretninu()">
+                                <span *ngIf='whatToDisplay=="dodajNekretninu"'>▼</span>Dodaj nekretninu</a></li>
+                    </ul>
+
+                    <li>
+                        <a (click)="prikaziZahteveZaKupovinu()">
+                            <span *ngIf='whatToDisplay=="zahteviZaKupovinu"'>▼</span>Zahtevi za kupovinu</a>
+                    </li>
+                    <!--PROFIL-->
+                    <li>
+                        <a (click)="profil()">
+                            <span *ngIf='whatToDisplay=="profil"'>▼</span>Profil</a>
+                    </li>
+
+                    <li *ngIf='user.type=="admin" || user.type=="agent" || user.type=="user"'><a (click)="lozinka()">
+                            <span *ngIf='whatToDisplay=="promenaLozinke"'>▼</span>Promena lozinke</a></li>
+                </menu>
+            </div>
+
+            <!--HOME DIV-->
+            <div class="home">
+
+                <!--POJEDINACNA NEKRETNINA-->
+                <div *ngIf='nekretnina!=null'>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <h4>{{nekretnina.opis}}</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{nekretnina.grad}}, {{nekretnina.opstina}}</td>
+                            <td *ngIf='nekretnina.tip=="kuca"'>Adresa: {{nekretnina.ulica}}, {{nekretnina.broj}}</td>
+                            <td *ngIf='nekretnina.tip=="stan"'>Adresa: {{nekretnina.ulica}}, {{nekretnina.broj}}, stan
+                                {{nekretnina.stan}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{nekretnina.tip}}</td>
+                            <td *ngIf='nekretnina.tip=="kuca"'>Spratova: {{nekretnina.spratnost}}</td>
+                            <td *ngIf='nekretnina.tip=="stan"'>
+                                Sprat:
+                                <span *ngIf='nekretnina.sprat==0'> suteren, Ukupno spratova:
+                                    {{nekretnina.spratnost}}</span>
+                                <span *ngIf='nekretnina.sprat==nekretnina.spratnost'> potkrovlje, Ukupno spratova:
+                                    {{nekretnina.spratnost}}</span>
+                                <span *ngIf='nekretnina.sprat!=nekretnina.spratnost && nekretnina.sprat!=0'>
+                                    {{nekretnina.sprat}}, Ukupno spratova: {{nekretnina.spratnost}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kvadratura: {{nekretnina.kvadratura}} m2, Broj soba:
+                                <span *ngIf='nekretnina.br_soba==0.5'> Garsonjera</span>
+                                <span *ngIf='nekretnina.br_soba!=0.5'> {{nekretnina.br_soba}}</span>
+                            </td>
+                            <td>
+                                Nameštenost:
+                                <span *ngIf='nekretnina.namestenost'> DA</span>
+                                <span *ngIf='!nekretnina.namestenost'> NE</span>
+                            </td>
+                        </tr>
+                        <tr *ngIf='nekretnina.vlasnik!=user.username'>
+                           <!--<td>Nacin placanja:
+                                <label>
+                                    <input type="radio" name="nacinPlacanja" [(ngmodel)]="nacinPlacanja" value="kes">
+                                    Kes
+                                </label>
+                                <label>
+                                    <input type="radio" name="nacinPlacanja" [(ngmodel)]="nacinPlacanja" value="kredit">
+                                    Kredit
+                                </label>
+                            </td>-->
+                            <td>
+                                <button (click)='dajPonudu(nekretnina)'>Daj ponudu</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div *ngFor='let slika of nekretnina.slike'>
+                        <div class="nekretninaSlika" *ngIf='!isMP4(slika)'>
+                            <img src="{{'../../assets/photos/'+slika}}" width="200" height="200">
+                        </div>
+                        <div class="nekretninaSlika" *ngIf='isMP4(slika)'>
+                            <video width="600" controls>
+                                <source src="{{'../../assets/photos/'+slika}}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf='nekretnina==null'>
+                    <!--PRIKAZ SVIH NEKRETNINA ( PROMOVISANE I PRETRAGA)-->
+                    <ng-container *ngIf='whatToDisplay=="" || whatToDisplay=="sveNekretnine"'>
+                        <app-nekretnine></app-nekretnine>
+                    </ng-container>
+
+                    <!--CANVAS-->
+                    <div class="contentCanvas" *ngIf='whatToDisplay!="" && whatToDisplay!="sveNekretnine"'>
+
+                        <!--IZMENA PROFILA KORISNIKA-->
+                        <ng-container *ngIf='whatToDisplay=="profil"'>
+                            <app-profil></app-profil>
+                        </ng-container>
+
+                        <!--ZAHTEVI ZA PRODAJU-->
+                        <ng-container *ngIf='whatToDisplay=="zahteviZaKupovinu"'>
+                            <app-zahtevi-prodaja></app-zahtevi-prodaja>
+                        </ng-container>
+
+                        <!--DODAVANJE NEKRETNINE-->
+                        <ng-container *ngIf='whatToDisplay=="dodajNekretninu"'>
+                            <app-listing></app-listing>
+                        </ng-container>
+
+                        <!--MOJE NEKRETNINE-->
+                        <table *ngIf='whatToDisplay=="mojeNekretnine"'>
+                            <tr *ngIf='nekretnine.length>0'>
+                                <th>
+                                    Adresa:
+                                </th>
+                                <th colspan="3">
+                                    Grad i opština:
+                                </th>
+                            </tr>
+                            <tr *ngFor='let nekretnina of nekretnine'>
+                                <td *ngIf='nekretnina.tip=="stan"'>
+                                    {{nekretnina.ulica}}, {{nekretnina.broj}}, {{nekretnina.stan}}
+                                </td>
+                                <td *ngIf='nekretnina.tip=="kuca"'>
+                                    {{nekretnina.ulica}}, {{nekretnina.broj}}
+                                </td>
+                                <td>
+                                    {{nekretnina.grad}}, {{nekretnina.opstina}}
+                                </td>                                
+                                <td>
+                                    <button (click)='callNekretnina(nekretnina)'>Prikaz</button>
+                                </td>
+                                <!--<td>
+                                    <button (click)='izmeniNekretninu(nekretnina)'>Izmeni</button>
+                                </td>-->
+                                <td>
+                                    <button (click)='obrisiNekretninu(nekretnina)'>Obrisi</button>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!--PROMENA LOZINKE-->
+                        <table *ngIf='whatToDisplay=="promenaLozinke"'>
+                            <tr>
+                                <td>Stara lozinka: *</td>
+                                <td><input type="password" name="oldPassword" [(ngModel)]='oldPassword'></td>
+                            </tr>
+                            <tr>
+                                <td>Nova lozinka: *</td>
+                                <td><input type="password" name="password" [(ngModel)]='password'></td>
+                            </tr>
+                            <tr>
+                                <td>Potvrda lozinke: *</td>
+                                <td><input type="password" name="password1" [(ngModel)]='password1'></td>
+                            </tr>
+                            <tr>
+                                <button (click)='promenaLozinke()'>Potvrdi</button>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <span *ngIf='msg!=""' class="red">{{msg}}</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+    <app-footer></app-footer>
+</div>

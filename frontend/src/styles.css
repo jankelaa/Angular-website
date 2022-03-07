@@ -1,0 +1,232 @@
+@import "../node_modules/c3/c3.min.css";
+body {
+    margin: 0;
+    /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    */font-size: small;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: lightyellow;
+    padding: 0;
+}
+
+span.red{
+    color: red;
+    font-size: small;
+}
+
+span.header{
+    padding-bottom:0px;
+    margin-top:0;
+    background-color: #5598cf;
+    height: 50px;
+    border-bottom:1px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top:1px;
+    border-style:solid;
+    display: flex;
+    justify-content: center;
+  }
+  div.profile{
+      position: absolute;
+      right: 10px;
+  }
+
+  img.profile{
+    height: 45px;
+  }
+
+  table.profile{
+    font-size: larger;
+  }
+
+  img.header{
+      height: 50px;
+  }
+
+  div.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  div.center{
+      display: flex;
+      justify-content: center;
+  }
+
+  div.login{
+      margin-left: 10px;
+      width:25%;
+      display: inline-block;
+      /*border: 5;
+      border-style: solid;*/
+  }
+
+  div.pretragaGost{
+    margin-left: 10px;
+    width:25%;
+    display: inline-block;
+    margin-top: 20px;
+    /*border: 5;
+    border-style: solid;*/
+}
+
+  #cena {
+    width: 5em;
+  }
+  #brojevi {
+    width: 3em;
+  }
+
+  div.register{
+    height: auto;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: 	#5598cf;
+    width: 100%;
+    margin-top:20px;
+    border:1px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+  }
+
+  div.registerHome{
+    float:right;
+    width: 60%;
+    margin-right: 20%;
+  }
+
+  div.home{
+    float:right;
+    width: 60%;
+    margin-right: 10%;
+  }
+
+  div.nekretninaGost{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #5598cf;
+    width: 100%;
+    margin-top:5px;
+    margin-bottom: 0;
+    border:1px;
+    border-color: black;
+    border-style: solid;
+  }
+
+  div.nekretninaUser{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #5598cf;
+    width: 100%;
+    margin-top:5px;
+    margin-bottom: 0;
+    border:1px;
+    border-color: black;
+    border-style: solid;
+  }
+
+  div.contentCanvas{
+    padding: 5px;
+    background-color: #5598cf;
+    width: max-content;
+    margin-top:5px;
+    margin-bottom: 0;
+    border:1px;
+    border-color: black;
+    border-style: solid;
+  }
+
+  table.nekretnina {
+    width: 100%;
+  }
+
+  img.promo{
+    height: 100px;
+  }
+
+  img.nekretnine{
+    height: 50px;
+  }
+
+  #page-container {
+  /*  position: relative;
+    min-height: 100vh;*/
+    
+  display: flex;
+  flex-direction: column;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+    flex: 1;
+  }
+  
+  #footer {
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+    margin-top: 5px;
+  }
+
+  div.menu{
+      margin-left: 10px;
+      width:25%;
+      display: inline-block;
+      /*border: 5;
+      border-style: solid;*/
+  }
+
+  menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+  }
+  menu li a:hover {
+    background-color: #ccc;
+    cursor: pointer; 
+  }
+
+  div.user_pretraga{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  button.green{
+    background-color: rgb(162, 218, 32);
+  }
+  button.red{
+    background-color: orangered;
+  }
+
+  html, body, #page-container{
+    min-height: 100vh;
+  }
+
+  img.nekretninaSlika{
+    float:left;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+  div.nekretninaSlika{
+    float:left;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+  div.grafikoni{
+    width: 50%;
+    float:left;
+  }

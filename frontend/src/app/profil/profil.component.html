@@ -1,0 +1,53 @@
+<table>
+    <tr>
+        <td>
+            <img *ngIf='profil.photo!=null && profil.photo!=""' src="{{'../../assets/photos/'+profil.photo}}"
+                class="profile">
+            <img *ngIf='profil.photo==null || profil.photo==""' src="{{'../../assets/photos/avatar.png'}}"
+                class="profile">
+                {{profil.username}}
+        </td>
+        <td>
+            <input type="file" name="photo" (change)="onPhotoSelected($event)">
+        </td>
+    </tr>
+    <tr>
+        <td>Ime: {{profil.firstname}}</td>
+        <td><input type="text" name="firstname" [(ngModel)]='firstname'></td>
+    </tr>
+    <tr>
+        <td>Prezime: {{profil.lastname}}</td>
+        <td><input type="text" name="lastname" [(ngModel)]='lastname'></td>
+    </tr>
+    <tr>
+        <td>E-mail: {{profil.email}}</td>
+        <td><input type="text" name="email" [(ngModel)]='email'></td>
+    </tr>
+    <tr>
+        <td>Grad: {{profil.city}}</td>
+        <td><input type="text" name="city" [(ngModel)]='city'></td>
+    </tr>
+    <tr>
+        <td>Zemlja: {{profil.country}}</td>
+        <td><input type="text" name="country" [(ngModel)]='country'></td>
+    </tr>
+    <tr *ngIf='user.type=="admin"'>
+        <td>Tip: {{profil.type}}</td>
+        <td>
+            <label>
+                <input type="radio" name="type" [(ngModel)]='type' value="user"> Korisnik
+            </label>
+            <label>
+                <input type="radio" name="type" [(ngModel)]='type' value="agent"> Agent
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <button (click)='azurirajProfil()'>Potvrdi</button>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <span *ngIf='message!=""' class="red">{{message}}</span>
+        </td>
+    </tr>
+</table>

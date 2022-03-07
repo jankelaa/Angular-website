@@ -1,0 +1,17 @@
+table {
+    border:none;
+    border-collapse: collapse;
+}
+
+table th, td {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+table th:first-child, td:first-child {
+    border-left: none;
+}
+
+table th:last-child, td:last-child {
+    border-right: none;
+}

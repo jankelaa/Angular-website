@@ -1,0 +1,84 @@
+<table *ngIf='user.type=="user"'>
+    <tr *ngIf='nekretnine.length<1'>
+        <td> Nemate zahteva za kupovinu...</td>
+    </tr>
+    <tr *ngIf='nekretnine.length>0'>
+        <th>Kupac:</th>
+        <th>Vlasnik:</th>
+        <th>Adresa:</th>
+        <th>Grad i opština:</th>
+        <th colspan="3">Cena:</th>
+    </tr>
+    <ng-container *ngFor='let nekretnina of nekretnine'>
+        <tr>
+            <td>
+                {{nekretnina.kupac}}
+            </td>
+            <td>
+                {{nekretnina.vlasnik}}
+            </td>
+            <td *ngIf='nekretnina.tip=="kuca"'>
+                {{nekretnina.ulica}}, {{nekretnina.broj}}
+            </td>
+            <td *ngIf='nekretnina.tip=="stan"'>
+                {{nekretnina.ulica}}, {{nekretnina.broj}}, {{nekretnina.stan}}
+            </td>
+            <td>
+                {{nekretnina.grad}}, {{nekretnina.opstina}}
+            </td>
+            <td>
+                {{nekretnina.cena}} €
+            </td>
+            <td *ngIf='nekretnina.potvrda==null && nekretnina.vlasnik==user.username'>
+                <button (click)='prihvatiPonuduUser(nekretnina)'>Prihvati</button>
+            </td>
+            <td *ngIf='nekretnina.potvrda==null  && nekretnina.vlasnik==user.username'>
+                <button (click)='odbijPonuduUser(nekretnina)'>Odbij</button>
+            </td>
+        </tr>
+    </ng-container>
+</table>
+
+<table *ngIf='user.type=="admin" || user.type=="agent"'>
+    <tr *ngIf='nekretnine.length<1'>
+        <td> Nemate zahteva za kupovinu...</td>
+    </tr>
+    <tr *ngIf='nekretnine.length>0'>
+        <th>Kupac:</th>
+        <th>Vlasnik:</th>
+        <th>Adresa:</th>
+        <th>Grad i opština:</th>
+        <th colspan="3">Cena:</th>
+    </tr>
+    <ng-container *ngFor='let nekretnina of nekretnine'>
+        <tr>
+            <td>
+                {{nekretnina.kupac}}
+            </td>
+            <td>
+                {{nekretnina.vlasnik}}
+            </td>
+            <td *ngIf='nekretnina.tip=="kuca"'>
+                {{nekretnina.ulica}}, {{nekretnina.broj}}
+            </td>
+            <td *ngIf='nekretnina.tip=="stan"'>
+                {{nekretnina.ulica}}, {{nekretnina.broj}}, {{nekretnina.stan}}
+            </td>
+            <td>
+                {{nekretnina.grad}}, {{nekretnina.opstina}}
+            </td>
+            <td>
+                {{nekretnina.cena}} €
+            </td>
+            <td *ngIf='nekretnina.potvrda==null && nekretnina.vlasnik=="agencija"'>
+                <button (click)='prihvatiPonuduAgent(nekretnina)'>Prihvati</button>
+            </td>
+            <td *ngIf='nekretnina.potvrda==null && nekretnina.vlasnik=="agencija"'>
+                <button (click)='odbijPonuduAgent(nekretnina, true)'>Odbij</button>
+            </td>
+            <td *ngIf='nekretnina.potvrda!=null' colspan="2">
+                <button (click)='potvrdiProdaju(nekretnina)'>Potvrdi</button>
+            </td>
+        </tr>
+    </ng-container>
+</table>

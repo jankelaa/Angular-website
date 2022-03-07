@@ -1,0 +1,123 @@
+<ng-container *ngIf='user==null'>
+    <div id="page-container">
+        <div id="content-wrap">
+            <app-header></app-header>
+            <div class="registerHome">
+                <div class="register">
+                    <table>
+                        <tr>
+                            <td>Ime: *</td>
+                            <td><input type="text" name="firstname" [(ngModel)]='firstname'></td>
+                        </tr>
+                        <tr>
+                            <td>Prezime: *</td>
+                            <td><input type="text" name="lastname" [(ngModel)]='lastname'></td>
+                        </tr>
+                        <tr>
+                            <td>Korisnicko ime: *</td>
+                            <td><input type="text" name="username" [(ngModel)]='username'></td>
+                        </tr>
+                        <tr>
+                            <td>Lozinka: *</td>
+                            <td><input type="password" name="password" [(ngModel)]='password'></td>
+                        </tr>
+                        <tr>
+                            <td>Potvrdi lozinku: *</td>
+                            <td><input type="password" name="password1" [(ngModel)]='password1'></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail: *</td>
+                            <td><input type="text" name="email" [(ngModel)]='email'></td>
+                        </tr>
+                        <tr>
+                            <td>Grad: *</td>
+                            <td><input type="text" name="city" [(ngModel)]='city'></td>
+                        </tr>
+                        <tr>
+                            <td>Zemlja: *</td>
+                            <td><input type="text" name="country" [(ngModel)]='country'></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Slika:
+                            </td>
+                            <td>
+                                <input type="file" name="photo" (change)="onPhotoSelected($event)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <button (click)='register()'>Potvrdi</button>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span *ngIf='message!=""' class="red">{{message}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</ng-container>
+
+<ng-container *ngIf='user!=null'>
+        <table>
+            <tr>
+                <td>Ime: *</td>
+                <td><input type="text" name="firstname" [(ngModel)]='firstname'></td>
+            </tr>
+            <tr>
+                <td>Prezime: *</td>
+                <td><input type="text" name="lastname" [(ngModel)]='lastname'></td>
+            </tr>
+            <tr>
+                <td>Korisnicko ime: *</td>
+                <td><input type="text" name="username" [(ngModel)]='username'></td>
+            </tr>
+            <tr>
+                <td>Lozinka: *</td>
+                <td><input type="password" name="password" [(ngModel)]='password'></td>
+            </tr>
+            <tr>
+                <td>Potvrdi lozinku: *</td>
+                <td><input type="password" name="password1" [(ngModel)]='password1'></td>
+            </tr>
+            <tr>
+                <td>E-mail: *</td>
+                <td><input type="text" name="email" [(ngModel)]='email'></td>
+            </tr>
+            <tr>
+                <td>Grad: *</td>
+                <td><input type="text" name="city" [(ngModel)]='city'></td>
+            </tr>
+            <tr>
+                <td>Zemlja: *</td>
+                <td><input type="text" name="country" [(ngModel)]='country'></td>
+            </tr>
+            <tr>
+                <td>Tip: *</td>
+                <td>
+                    <select [(ngModel)]="type" name="type">
+                        <option *ngFor="let type of types" [value]="type">{{type}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Slika:
+                </td>
+                <td>
+                    <input type="file" name="photo" (change)="onPhotoSelected($event)">
+                </td>
+            </tr>
+            <tr>
+                <button (click)='register()'>Potvrdi</button>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span *ngIf='message!=""' class="red">{{message}}</span>
+                </td>
+            </tr>
+        </table>
+</ng-container>

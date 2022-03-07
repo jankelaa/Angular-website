@@ -1,0 +1,25 @@
+<div class="login">
+    <table>
+        <tr>
+            <td>Korisnicko ime:</td>
+            <td><input type="text" name='username' [(ngModel)]='username' size="10"></td>
+        </tr>
+        <tr>
+            <td>Lozinka:</td>
+            <td><input type="password" name="password" [(ngModel)]='password' size="10"></td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)='login()'>Prijava</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a routerLink='register'>Registruj se?</a></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span *ngIf='message!=""' class="red">{{message}}</span>
+            </td>
+        </tr>
+    </table>
+</div>

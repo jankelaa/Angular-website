@@ -1,0 +1,22 @@
+<span class="header">
+    <a routerLink=''><img src="{{'../../assets/photos/logo.png'}}" class="header"></a>
+
+    <div class="profile" *ngIf='user!=null'>
+        <table class="profile">
+            <tr>
+                <td>
+                    {{user.username}}
+                </td>
+                <td>
+                    <img *ngIf='user.photo!=null && user.photo!=""' src="{{'../../assets/photos/'+user.photo}}"
+                        class="profile">
+                    <img *ngIf='user.photo==null || user.photo==""' src="{{'../../assets/photos/avatar.png'}}"
+                        class="profile">
+                </td>
+                <td>
+                    <button (click)="logout()">Odjavi se</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</span>

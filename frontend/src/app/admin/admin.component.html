@@ -1,0 +1,197 @@
+<div id="page-container">
+    <div id="content-wrap">
+        <app-header></app-header>
+        <span>
+
+            <!--MENI-->
+            <div class="menu">
+                <menu>
+                    <li><a (click)="dohvatiKorisnike()">Korisnici</a></li>
+                    <ul *ngIf='whatToDisplay=="korisnici" || whatToDisplay=="dodajKorisnika"'>
+                        <li><a (click)="dohvatiKorisnike()">
+                                <span *ngIf='whatToDisplay=="korisnici"'>▼</span>Svi korisnici</a></li>
+                        <li><a (click)="dodajKorisnika()">
+                                <span *ngIf='whatToDisplay=="dodajKorisnika"'>▼</span>Dodaj korisnika</a></li>
+                    </ul>
+
+                    <li><a (click)="zahteviZaRegistraciju()">Zahtevi</a></li>
+                    <ul *ngIf='whatToDisplay=="zahteviZaRegistraciju" || whatToDisplay=="zahteviZaNekretnine"'>
+                        <li><a (click)="zahteviZaRegistraciju()">
+                                <span *ngIf='whatToDisplay=="zahteviZaRegistraciju"'>▼</span>Zahtevi za registraciju</a>
+                        </li>
+                        <li><a (click)="zahteviZaNekretnine()">
+                                <span *ngIf='whatToDisplay=="zahteviZaNekretnine"'>▼</span>Zahtevi za nekretnine</a>
+                        </li>
+                    </ul>
+
+                    <li><a (click)="nekretnineLista()">
+                            <span *ngIf='whatToDisplay=="nekretnine"'>▼</span>Nekretnine</a></li>
+                    <ul *ngIf='whatToDisplay=="nekretnine" || whatToDisplay=="dodajNekretninu" ||
+                         whatToDisplay=="nekretnineGrafika" || whatToDisplay=="pregledProdaja"'>
+                        <!--<li><a (click)="pregledProdaja()">
+                                <span *ngIf='whatToDisplay=="pregledProdaja"'>▼</span>Pregled prodaja</a></li>-->
+                        <li><a (click)="nekretnineGrafika()">
+                                <span *ngIf='whatToDisplay=="nekretnineGrafika"'>▼</span>Nekretnine statistika</a></li>
+                        <li><a (click)="dodajNekretninu()">
+                                <span *ngIf='whatToDisplay=="dodajNekretninu"'>▼</span>Dodaj nekretninu</a></li>
+                    </ul>
+
+                    <li *ngIf='user.type=="admin" || user.type=="agent" || user.type=="user"'>
+                        <a (click)="lozinka()">
+                            <span *ngIf='whatToDisplay=="promenaLozinke"'>▼</span>Promena lozinke</a>
+                    </li>
+                </menu>
+            </div>
+
+            <!--HOME DIV-->
+            <div class="home">
+
+                <!--GRAFIKA-->
+                <div *ngIf='whatToDisplay=="nekretnineGrafika"'>
+                    <app-grafikoni></app-grafikoni>
+                </div>
+
+                <!--CANVAS-->
+                <div class="contentCanvas"
+                    *ngIf='whatToDisplay!="" && whatToDisplay!="nekretnine" && whatToDisplay!="nekretnineGrafika"'>
+
+                    <!--PROMENA LOZINKE-->
+                    <table *ngIf='whatToDisplay=="promenaLozinke"'>
+                        <tr>
+                            <td>Stara lozinka: *</td>
+                            <td><input type="password" name="oldPassword" [(ngModel)]='oldPassword'></td>
+                        </tr>
+                        <tr>
+                            <td>Nova lozinka: *</td>
+                            <td><input type="password" name="password" [(ngModel)]='password'></td>
+                        </tr>
+                        <tr>
+                            <td>Potvrda lozinke: *</td>
+                            <td><input type="password" name="password1" [(ngModel)]='password1'></td>
+                        </tr>
+                        <tr>
+                            <button (click)='promenaLozinke()'>Potvrdi</button>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span *ngIf='msg!=""' class="red">{{msg}}</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!--IZMENA KORISNIKA-->
+                    <ng-container *ngIf='whatToDisplay=="profil"'>
+                        <app-profil></app-profil>
+                    </ng-container>
+
+                    <!--DODAVANJE NEKRETNINE-->
+                    <ng-container *ngIf='whatToDisplay=="dodajNekretninu"'>
+                        <app-listing></app-listing>
+                    </ng-container>
+
+                    <!--DODAVANJE KORISNIKA / REGISTRACIJA-->
+                    <ng-container *ngIf='whatToDisplay=="dodajKorisnika"'>
+                        <app-register></app-register>
+                    </ng-container>
+
+                    <!--KORISNICI I ZAHTEVI ZA REGISTRACIJU-->
+                    <table *ngIf='whatToDisplay=="korisnici" || whatToDisplay=="zahteviZaRegistraciju"'>
+                        <tr>
+                            <th>
+                                Slika:
+                            </th>
+                            <th colspan="3">
+                                Korisnik:
+                            </th>
+                        </tr>
+                        <ng-container *ngFor='let korisnik of korisnici'>
+                            <tr *ngIf='korisnik.type!="admin"'>
+                                <td>
+                                    <img *ngIf='korisnik.photo!=null && korisnik.photo!=""'
+                                        src="{{'../../assets/photos/'+korisnik.photo}}" class="profile">
+                                    <img *ngIf='korisnik.photo==null || korisnik.photo==""'
+                                        src="{{'../../assets/photos/avatar.png'}}" class="profile">
+                                </td>
+                                <td>
+                                    {{korisnik.username}}
+                                </td>
+                                <td>
+                                    <button (click)='profil(korisnik)'
+                                        *ngIf='whatToDisplay=="korisnici"'>Izmeni</button>
+                                    <button (click)='prihvatiKorisnika(korisnik)'
+                                        *ngIf='whatToDisplay=="zahteviZaRegistraciju"'>Prihvati</button>
+                                </td>
+                                <td>
+                                    <button (click)='obrisiKorisnika(korisnik.username)'
+                                        *ngIf='whatToDisplay=="korisnici"'>Obrisi</button>
+                                    <button (click)='odbijKorisnika(korisnik.username, true)'
+                                        *ngIf='whatToDisplay=="zahteviZaRegistraciju"'>Odbij</button>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </table>
+
+                    <!--ZAHTEVI ZA NEKRETNINE-->
+                    <table *ngIf='whatToDisplay=="zahteviZaNekretnine"'>
+                        <tr>
+                            <th>Slika:</th>
+                            <th>Vlasnik:</th>
+                            <th>Adresa:</th>
+                            <th colspan="3">Grad i opština:</th>
+                        </tr>
+                        <ng-container *ngFor='let nekretnina of nekretnine'>
+                            <tr>
+                                <td>
+                                    <img src="{{'../../assets/photos/'+nekretnina.slike[0]}}" class="profile">
+                                </td>
+                                <td>
+                                    {{nekretnina.vlasnik}}
+                                </td>
+                                <td *ngIf='nekretnina.tip=="kuca"'>
+                                    {{nekretnina.ulica}}, {{nekretnina.broj}}
+                                </td>
+                                <td *ngIf='nekretnina.tip=="stan"'>
+                                    {{nekretnina.ulica}}, {{nekretnina.broj}}, {{nekretnina.stan}}
+                                </td>
+                                <td>
+                                    {{nekretnina.grad}}, {{nekretnina.opstina}}
+                                </td>
+                                <td>
+                                    <button (click)='prihvatiNekretninu(nekretnina)'>Prihvati</button>
+                                </td>
+                                <td>
+                                    <button (click)='odbijNekretninu(nekretnina, true)'>Odbij</button>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </table>
+
+                    <!--PREGLED PRODAJA
+                    <table class="nekretnina" *ngIf='whatToDisplay=="pregledProdaja"'>
+                        <tr>
+                            <th>Kupac:</th>
+                            <th>Vlasnik:</th>
+                            <th>Cena:</th>
+                            <th>Tip:</th>
+                            <th>Grad i opstina:</th>
+                            <th>Ulica:</th>
+                            <th>Broj:</th>
+                            <th *ngIf='prodaja.tip=="stan"'>Stan:</th>
+                        </tr>
+                        <tr *ngFor='let prodaja of prodaje'>
+                            <td>{{prodaja.kupac}}</td>
+                            <td>{{prodaja.vlasnik}}</td>
+                            <td>{{prodaja.cena}} €</td>                            
+                            <td>{{prodaja.tip}}</td>
+                            <td>{{prodaja.grad}}, {{prodaja.opstina}}</td>
+                            <td>{{prodaja.ulica}}</td>
+                            <td>{{prodaja.broj}}</td>
+                            <td *ngIf='prodaja.tip=="stan"'>{{prodaja.stan}}</td>
+                        </tr>
+                    </table>-->
+                </div>
+            </div>
+        </span>
+    </div>
+    <app-footer></app-footer>
+</div>
